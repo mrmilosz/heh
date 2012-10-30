@@ -1,0 +1,8 @@
+*.swo
+*.swp
+.DS_Store
+error_log
+subdomains/*
+.ftpquota
+artwork/*
+static/scaled-artwork/*

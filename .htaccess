@@ -1,0 +1,27 @@
+# Fancy indexing (non-essential)
+Options +Indexes
+IndexOptions FancyIndexing
+
+# Compression (non-essential)
+SetOutputFilter DEFLATE
+
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+
+SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|php)$ no-gzip dont-vary
+
+# Rewriting (essential)
+DirectoryIndex framework.php
+
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^subdomains/* - [L]
+
+RewriteCond %{REQUEST_URI} ^(?!/static/).+
+RewriteRule (.*) framework.php
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule (.*) framework.php

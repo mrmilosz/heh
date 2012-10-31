@@ -9,9 +9,22 @@ body {
 	font-size: 12px;
 }
 
+pre,
+p,
+input,
+textarea {
+  font: inherit;
+  margin: 10px;
+}
+
 .huge {
   margin: 10px;
   padding: 0;
   font-size: 200px;
   text-transform: uppercase;
+}
+
+.heh-input {
+  width: 500px;
+  height: 300px;
 }

@@ -6,3 +6,5 @@ subdomains/*
 .ftpquota
 artwork/*
 static/scaled-artwork/*
+records.db
+*~

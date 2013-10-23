@@ -5,6 +5,7 @@ class Heh extends Model {
     $this->content = $content;
   }
 
+  // Persist this heh and return its ID. (Does only inserts, not updates, because I don't need that functionality yet :)
   function save() {
     $id = null;
 
@@ -25,6 +26,7 @@ class Heh extends Model {
     return $id;
   }
 
+  // Grab a heh by ID.
   public static function by_id($id) {
     $heh = null;
 
@@ -43,7 +45,7 @@ class Heh extends Model {
         if ($row = $statement->fetch()) {
           $heh = new Heh($row['content']);
         }
-				$statement->closeCursor();
+        $statement->closeCursor();
       }
     }
 
